@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://byrfv8ds4a5gl"]
+
+[ext_resource type="Texture2D" uid="uid://brpmh2q053aku" path="res://Sprites/Sprites/Player_Souls/Run.png" id="1_w61io"]
+
+[node name="Jogador" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0.75, 0.5)
+scale = Vector2(0.982353, 1.01563)
+texture = ExtResource("1_w61io")
+hframes = 3
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

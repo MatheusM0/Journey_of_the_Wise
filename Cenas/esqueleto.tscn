@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bikc7g85oug7l"]
+
+[ext_resource type="Texture2D" uid="uid://bw4xdicy63nqa" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-1.png" id="1_oditc"]
+[ext_resource type="Texture2D" uid="uid://dvk1ndtjl5ou2" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-2.png" id="2_7bvmb"]
+[ext_resource type="Texture2D" uid="uid://ddx4lsl2tawis" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-3.png" id="3_j6ind"]
+[ext_resource type="Texture2D" uid="uid://bi10uoa2kbvvv" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-4.png" id="4_7eetu"]
+[ext_resource type="Texture2D" uid="uid://bk5ny7sgjjyuc" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-5.png" id="5_0mb4c"]
+[ext_resource type="Texture2D" uid="uid://cuhs1nvneeiq3" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-6.png" id="6_n2nli"]
+[ext_resource type="Texture2D" uid="uid://c3vqwa3me31lu" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-7.png" id="7_5ohtk"]
+[ext_resource type="Texture2D" uid="uid://cvte3ilji6trr" path="res://Sprites/Sprites/Gothicvania/Characters/Enemies/CemeteryStage/Skeleton/skeleton-8.png" id="8_esuxj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvdai"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_oditc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_7bvmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_j6ind")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7eetu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0mb4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n2nli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5ohtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_esuxj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_srb2s"]
+size = Vector2(32, 40)
+
+[node name="Skeleton" type="Area2D"]
+position = Vector2(-1, -2)
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nvdai")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_srb2s")
