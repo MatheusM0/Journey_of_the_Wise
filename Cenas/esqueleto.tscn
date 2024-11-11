@@ -158,9 +158,10 @@ states/walk/node = SubResource("AnimationNodeAnimation_wd8go")
 states/walk/position = Vector2(352, 100)
 transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_j0eil"), "walk", "dead", SubResource("AnimationNodeStateMachineTransition_83wlx")]
 
-[node name="Esqueleto" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
+[node name="Esqueleto" type="CharacterBody2D" node_paths=PackedStringArray("hit_state") groups=["Enemy"]]
 position = Vector2(-5, 17)
 collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_53qyo")
 hit_state = NodePath("CharacterStateMachine/Hit")
 
