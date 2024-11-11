@@ -1,0 +1,1 @@
+the background´s parallax haven´t worked yet, so I chose to do a "forced parallax" by duplicating the background image, so, I created this note only for the branch update. that´s it.
