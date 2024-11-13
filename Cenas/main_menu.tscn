@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqme4iu0dc7f3"]
+
+[ext_resource type="Script" path="res://Cenas/main_menu.gd" id="1_texdg"]
+[ext_resource type="Texture2D" uid="uid://cegvnhi282ifk" path="res://Sprites/Sprites/Gothicvania/Background/Fase 1/30913511-4C9C-4EC9-90F7-5679E5847A1C.png" id="2_iidtn"]
+
+[node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_texdg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577, 322.5)
+scale = Vector2(1.12305, 0.633789)
+texture = ExtResource("2_iidtn")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Exit" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

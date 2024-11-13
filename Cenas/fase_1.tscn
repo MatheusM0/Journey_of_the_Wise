@@ -7,6 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://byrfv8ds4a5gl" path="res://Cenas/Player.tscn" id="5_d3j27"]
 [ext_resource type="Texture2D" uid="uid://c7fr1cb2bue7k" path="res://Sprites/Sprites/Gothicvania/Background/GothicHorror/background_fase1_Corrigido_LARGURAAAA.png" id="7_3vgar"]
 [ext_resource type="PackedScene" uid="uid://c56f5lbm7jit" path="res://Cenas/health_change_manager.tscn" id="7_kolr8"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Script" path="res://Cenas/life_bar.gd" id="9_32t8u"]
+[ext_resource type="Texture2D" uid="uid://dd4g6kyef467o" path="res://Sprites/Sprites/HUD/icons8-pausa-15.png" id="11_ml8ky"]
+[ext_resource type="Script" path="res://Cenas/fase2_transition.gd" id="12_7icat"]
+[ext_resource type="PackedScene" uid="uid://dajxkogwllnfq" path="res://Cenas/health_bar.tscn" id="12_hy041"]
+[ext_resource type="Texture2D" uid="uid://cyapc4rhgh3s7" path="res://Sprites/Sprites/background_fase1_Corrigido_LARGURAAAA.png" id="12_o6uem"]
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnf1l"]
 texture = ExtResource("1_0brdr")
@@ -4714,6 +4722,7 @@ position = Vector2(580, 327)
 
 [node name="Sprite2D" type="Sprite2D" parent="BackGround/ParallaxBackground/ParallaxLayer"]
 position = Vector2(306, 532.5)
+<<<<<<< Updated upstream
 scale = Vector2(0.511667, 0.241211)
 texture = ExtResource("7_3vgar")
 
@@ -4729,6 +4738,40 @@ scale = Vector2(0.511667, 0.241211)
 texture = ExtResource("7_3vgar")
 flip_h = true
 flip_v = true
+=======
+scale = Vector2(0.512, 0.241)
+texture = ExtResource("12_o6uem")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(306, 286)
+scale = Vector2(0.512, 0.241)
+texture = ExtResource("12_o6uem")
+flip_v = true
+
+[node name="Sprite2D5" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(920, 286)
+scale = Vector2(0.512, 0.241)
+texture = ExtResource("12_o6uem")
+flip_h = true
+flip_v = true
+
+[node name="Sprite2D6" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1534, 286)
+scale = Vector2(0.512, 0.241)
+texture = ExtResource("12_o6uem")
+flip_v = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(920, 532.5)
+scale = Vector2(0.512, 0.241)
+texture = ExtResource("12_o6uem")
+flip_h = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
+position = Vector2(1534, 532.5)
+scale = Vector2(0.512, 0.241)
+texture = ExtResource("12_o6uem")
+>>>>>>> Stashed changes
 
 [node name="Sprite2D2" type="Sprite2D" parent="BackGround/ParallaxBackground/ParallaxLayer"]
 position = Vector2(306, 286)
