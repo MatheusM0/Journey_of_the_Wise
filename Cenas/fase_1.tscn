@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://cegvnhi282ifk" path="res://Sprites/Sprites/Gothicvania/Background/Fase 1/30913511-4C9C-4EC9-90F7-5679E5847A1C.png" id="3_iaapy"]
 [ext_resource type="PackedScene" uid="uid://bikc7g85oug7l" path="res://Cenas/esqueleto.tscn" id="4_8g3yq"]
 [ext_resource type="PackedScene" uid="uid://byrfv8ds4a5gl" path="res://Cenas/Player.tscn" id="5_d3j27"]
+[ext_resource type="Texture2D" uid="uid://1qd87ybllepi" path="res://Sprites/Sprites/Gothicvania/Background/Fase 1/WhatsApp Image 2024-11-05 at 12.13.12.jpeg" id="6_xgvoa"]
 [ext_resource type="PackedScene" uid="uid://c56f5lbm7jit" path="res://Cenas/health_change_manager.tscn" id="7_kolr8"]
 [ext_resource type="Script" path="res://Cenas/life_bar.gd" id="9_32t8u"]
 [ext_resource type="Texture2D" uid="uid://dd4g6kyef467o" path="res://Sprites/Sprites/HUD/icons8-pausa-15.png" id="11_ml8ky"]
 [ext_resource type="Script" path="res://Cenas/fase2_transition.gd" id="12_7icat"]
 [ext_resource type="PackedScene" uid="uid://dajxkogwllnfq" path="res://Cenas/health_bar.tscn" id="12_hy041"]
-[ext_resource type="Texture2D" uid="uid://cyapc4rhgh3s7" path="res://Sprites/Sprites/background_fase1_Corrigido_LARGURAAAA.png" id="12_pqexl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnf1l"]
 texture = ExtResource("1_0brdr")
@@ -4761,6 +4761,23 @@ position = Vector2(-62, 20)
 [node name="Point2" type="Marker2D" parent="Enemies/Esqueleto2/PatrolPoints"]
 position = Vector2(68, 21)
 
+[node name="BackGround" type="Node2D" parent="."]
+position = Vector2(580, 327)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="BackGround"]
+visible = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="BackGround/ParallaxBackground"]
+position = Vector2(114, 300)
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(820, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround/ParallaxBackground/ParallaxLayer"]
+position = Vector2(-135, -382)
+texture = ExtResource("6_xgvoa")
+centered = false
+flip_h = true
+
 [node name="HealthChangeManager" parent="." instance=ExtResource("7_kolr8")]
 
 [node name="Jogador" parent="." instance=ExtResource("5_d3j27")]
@@ -4799,47 +4816,6 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Passar_Fase2/Area2D"]
 position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_7os26")
-
-[node name="Background" type="Node2D" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Background"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background/ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
-position = Vector2(306, 532.5)
-scale = Vector2(0.512, 0.241)
-texture = ExtResource("12_pqexl")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
-position = Vector2(306, 286)
-scale = Vector2(0.512, 0.241)
-texture = ExtResource("12_pqexl")
-flip_v = true
-
-[node name="Sprite2D5" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
-position = Vector2(920, 286)
-scale = Vector2(0.512, 0.241)
-texture = ExtResource("12_pqexl")
-flip_h = true
-flip_v = true
-
-[node name="Sprite2D6" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
-position = Vector2(1534, 286)
-scale = Vector2(0.512, 0.241)
-texture = ExtResource("12_pqexl")
-flip_v = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
-position = Vector2(920, 532.5)
-scale = Vector2(0.512, 0.241)
-texture = ExtResource("12_pqexl")
-flip_h = true
-
-[node name="Sprite2D3" type="Sprite2D" parent="Background/ParallaxBackground/ParallaxLayer"]
-position = Vector2(1534, 532.5)
-scale = Vector2(0.512, 0.241)
-texture = ExtResource("12_pqexl")
 
 [connection signal="pressed" from="LifeBar/PauseButton" to="LifeBar" method="_on_pause_button_pressed"]
 [connection signal="body_entered" from="Passar_Fase2/Area2D" to="Passar_Fase2/Area2D" method="_on_body_entered"]
