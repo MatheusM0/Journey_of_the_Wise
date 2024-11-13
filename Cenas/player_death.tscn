@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbiyq52jxa8rs"]
+
+[ext_resource type="Texture2D" uid="uid://t3tnumdlpnec" path="res://Sprites/Sprites/Player_Souls/Death.png" id="1_mxqye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00vdv"]
+atlas = ExtResource("1_mxqye")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uy011"]
+atlas = ExtResource("1_mxqye")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upbfi"]
+atlas = ExtResource("1_mxqye")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2h1d"]
+atlas = ExtResource("1_mxqye")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kv2ph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00vdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uy011")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upbfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2h1d")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PlayerDeath" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.5, -11.5)
+scale = Vector2(1.08594, 1.35938)
+sprite_frames = SubResource("SpriteFrames_kv2ph")
+animation = &"death"
+autoplay = "death"
+frame = 1
+frame_progress = 0.0979142

@@ -3,7 +3,8 @@ extends CharacterBody2D
 class_name Player
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+@onready var hit_animation_player: AnimationPlayer = $HitAnimationPlayer
+var player_death = preload("res://Cenas/player_death.tscn")
 @export var speed = 100.0
 @export var jump_velocity : float = -350
 @onready var sprite2D : Sprite2D = $Sprite2D
@@ -49,3 +50,22 @@ func update_facing_direction():
 		sprite2D.flip_h = true
 		
 	emit_signal("facing_direction_changed", !sprite2D.flip_h)
+
+func player_death_func():
+	var player_death_instance = player_death.instantiate() 
+	player_death_instance.global_position = global_position
+	get_parent().add_child(player_death_instance)
+	queue_free()
+
+func _on_hurtbox_body_entered(body: Node2D):
+	if body.is_in_group("Enemy"):
+		hit_animation_player.play("hit")
+		#print("AIAIIII", body.damage_amount)
+		HealthManager.decrease_health(body.damage_amount)
+		
+	if HealthManager.current_health == 0:
+		player_death_func()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

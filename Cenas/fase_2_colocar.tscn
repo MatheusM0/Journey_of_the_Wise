@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://convxsufroc11"]
+
+[ext_resource type="Texture2D" uid="uid://1qd87ybllepi" path="res://Sprites/Sprites/Gothicvania/Background/Fase 1/WhatsApp Image 2024-11-05 at 12.13.12.jpeg" id="1_ikxfj"]
+
+[node name="Fase2_COLOCAR" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(415, 412)
+texture = ExtResource("1_ikxfj")
