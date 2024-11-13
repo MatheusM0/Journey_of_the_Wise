@@ -11,10 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_continue_pressed() -> void:
-	GameManager.continue_game()
-	queue_free()
-
-func _on_menu_pressed() -> void:
-	GameManager.main_menu()
-	queue_free()
+func _on_pause_button_pressed() -> void:
+	GameManager.pause_game()

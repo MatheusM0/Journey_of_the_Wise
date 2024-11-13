@@ -65,3 +65,7 @@ func _on_hurtbox_body_entered(body: Node2D):
 		
 	if HealthManager.current_health == 0:
 		player_death_func()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="journeyofthewise"
-run/main_scene="res://Cenas/fase_1.tscn"
+run/main_scene="res://Cenas/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://Cenas/signal_bus.gd"
 HealthManager="*res://Cenas/health_manager.gd"
+GameManager="*res://Cenas/game_manager.gd"
 
 [display]
 
