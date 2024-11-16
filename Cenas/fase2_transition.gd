@@ -1,5 +1,5 @@
 extends Area2D
-var FASE_2_COLOCAR = preload("res://Cenas/fase_2_colocar.tscn")
+var FASE_2_COLOCAR = preload("res://Cenas/fase_2.tscn")
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body is Player):
